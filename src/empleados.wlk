@@ -1,9 +1,5 @@
 object gimenez {
-	var sueldo = 15000
-	
-	method sueldo() = sueldo
-	
-	method sueldo(_sueldo) { sueldo = _sueldo }
+	var property sueldo = 15000
 }
 
 object baigorria {
