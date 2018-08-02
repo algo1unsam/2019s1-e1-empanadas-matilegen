@@ -1,13 +1,10 @@
 import empleados.*
 
-// auto-generated at 11/03/2016 19:57:09
-test "exported test from REPL session" {
-	
+test "sueldo de Baigorria y de Gimenez" {
 	baigorria.venderEmpanada()
 	baigorria.venderEmpanada()
-	baigorria.sueldo()
+	assert.equals(1530, baigorria.sueldo())
 	baigorria.venderEmpanada()
-	baigorria.sueldo()
-	gimenez.sueldo()
-	
+	assert.equals(1545, baigorria.sueldo())
+	assert.equals(15000, gimenez.sueldo())
 }
