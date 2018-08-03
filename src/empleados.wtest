@@ -7,4 +7,6 @@ test "sueldo de Baigorria y de Gimenez" {
 	baigorria.venderEmpanada()
 	assert.equals(1545, baigorria.sueldo())
 	assert.equals(15000, gimenez.sueldo())
+	gimenez.sueldo(12000)
+	assert.equals(12000, gimenez.sueldo())
 }
