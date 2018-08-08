@@ -7,8 +7,8 @@
 
 En "Empanadas Giménez", un modesto local de delivery de empanadas, tenemos dos empleados:
 
-* Giménez, que cobra un sueldo fijo. El valor puede cambiar mes a mes
-* Baigorria, el joven y esforzado empleado de Giménez, cobra en base a la cantidad de empanadas vendidas (actualmente $ 15).
+* Giménez, que cobra un sueldo fijo. El valor arranca en 15000 pesos, y después puede cambiar mes a mes.
+* Baigorria, el joven y esforzado empleado de Giménez, cobra en base a la cantidad de empanadas vendidas (actualmente $ 15 por empanada).
 
 Un tercer empleado, el señor Galván, es el encargado de pagarle el sueldo a los empleados, y de gestionar el dinero qe se utiliza para esto. 
 Asumimos que Galván arranca con un fondo para sueldos de 300000 pesos. Como los sueldos salen de este fondo, hay que descontar el importe correspondiente cuando Galván le paga a un empleado.
