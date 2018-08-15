@@ -21,8 +21,9 @@ Por ahora no vamos a tener en cuenta qué hace cada empleado al recibir el diner
 ## Qué hacen los empleados con lo que cobran
 
 Se modifica el método pagarA(empleado) de Galván de esta forma
-```
-pagarA(empleado) {
+
+```javascript
+method pagarA(empleado) {
     dinero -= empleado.sueldo()
     empleado.cobrarSueldo()
 }
