@@ -1,5 +1,15 @@
 import empleados.*
-
+//escenario
+test"Giménez arranca con 15000 de sueldo, deuda en 0, dinero en 0"{
+	assert.equals(15000,gimenez.sueldo())
+	assert.equals(0,gimenez.totalDeuda())
+	assert.equals(0,gimenez.totalDinero())
+}
+test"Giménez gasta 4000, totalDeuda() debe ser 4000, totalDinero() debe ser 0."{
+	gimenez.gastar(4000)
+	assert.equals(4000,gimenez.totalDeuda())
+	assert.equals(0,gimenez.totalDinero())
+}
 test "sueldo de Baigorria y de Gimenez" {
 	baigorria.venderEmpanada()
 	baigorria.venderEmpanada()
