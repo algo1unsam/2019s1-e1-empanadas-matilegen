@@ -10,6 +10,36 @@ test"Giménez gasta 4000, totalDeuda() debe ser 4000, totalDinero() debe ser 0."
 	assert.equals(4000,gimenez.totalDeuda())
 	assert.equals(0,gimenez.totalDinero())
 }
+test "Giménez gasta otros 8000, totalDeuda() pasa a 12000, totalDinero() sigue en 0."{
+	gimenez.gastar(4000)
+	gimenez.gastar(8000)
+	assert.equals(12000,gimenez.totalDeuda())
+	assert.equals(0,gimenez.totalDinero())
+}
+test "Giménez cobra, con los 15000 que recibe paga toda su deuda y le sobran 3000 pesos. Por lo tanto, totalDeuda() debe ser 0, y totalDinero() debe ser 3000."{
+	gimenez.gastar(4000)
+	gimenez.gastar(8000)
+	gimenez.cobrarSueldo()
+	assert.equals(0,gimenez.totalDeuda())
+	assert.equals(3000,gimenez.totalDinero())
+}
+test"Giménez gasta 25000, cubre 3000 con el dinero que tiene, el resto es deuda. totalDeuda() queda en 22000, totalDinero() en 0."{
+	gimenez.gastar(4000)
+	gimenez.gastar(8000)
+	gimenez.cobrarSueldo()
+	gimenez.gastar(25000)
+	assert.equals(22000,gimenez.totalDeuda())
+	assert.equals(0,gimenez.totalDinero())
+}
+test"Giménez cobra, tiene que dedicar los 15000 a pagar deudas, y no le alcanza. Ahora, totalDeuda() pasa a 7000, y totalDinero() a 0."{
+	gimenez.gastar(4000)
+	gimenez.gastar(8000)
+	gimenez.cobrarSueldo()
+	gimenez.gastar(25000)
+	gimenez.cobrarSueldo()
+	assert.equals(7000,gimenez.totalDeuda())
+	assert.equals(0,gimenez.totalDinero())
+}
 test "sueldo de Baigorria y de Gimenez" {
 	baigorria.venderEmpanada()
 	baigorria.venderEmpanada()

@@ -6,24 +6,28 @@ object gimenez {
 	var sueldo = 15000
 	var deuda=0
 	var dinero=0
+	method dinero(cant){
+		dinero=cant
+	}
+	method deudar(cant){
+		deuda=cant
+	}
 	method sueldo() { return sueldo }
 	method sueldo(nuevoValor) { sueldo = nuevoValor }
 	method cobrarSueldo(){
 		dinero+=15000
-		dinero-=deuda
-	}
+		
+		deudas.calcular(self,deuda)
+		
+		}
 	method gastar(cuanto){
-	if(dinero>0 and (dinero>cuanto or dinero==cuanto)){
-		dinero-=cuanto
-	}	else{
-		deuda+=cuanto
-	}
-	
+		gasto.calcular(self,cuanto)
+		
 	}
 	method totalDeuda(){return deuda}
 	method totalDinero(){return dinero}
-}
 
+}
 object baigorria {
 	var totalCobrado=0
 	var cantidadEmpanadasVendidas = 100
@@ -43,5 +47,45 @@ object galvan {
 	method dinero() { return dinero }
 	method pagarA( empleado ) { dinero -= empleado.sueldo()
 		empleado.pagarCobrar() //se rompe porque no estan los metodos unidos por polimorfismo. en este caso ninguno tiene el metodo cobrarSueldo()
+	}
+}
+object deudas{
+	method calcular(persona,deuda){
+		var dinero=persona.totalDinero()
+		var deud=persona.totalDeuda()
+		if(dinero==deuda or dinero>deuda){
+			dinero-=deuda
+			deud=0
+			persona.dinero(dinero)
+			persona.deudar(deud)
+		}else{
+			deud-=dinero
+			dinero=0
+			persona.dinero(dinero)
+			persona.deudar(deud)
+		}
+	}
+	}
+object gasto{
+	method calcular(persona,cuanto){
+		var acum
+		var dinero=persona.totalDinero()
+		var deuda=persona.totalDeuda()
+	if(dinero>0 and (dinero>cuanto or dinero==cuanto)){
+		dinero-=cuanto
+		persona.dinero(dinero)
+		persona.deudar(deuda)
+	}	else if(dinero<cuanto){
+		acum=cuanto-dinero
+		dinero=0
+		deuda+=acum
+		persona.dinero(dinero)
+		persona.deudar(deuda)
+	}
+	else{
+		deuda+=cuanto
+		persona.dinero(dinero)
+		persona.deudar(deuda)
+	}
 	}
 }
