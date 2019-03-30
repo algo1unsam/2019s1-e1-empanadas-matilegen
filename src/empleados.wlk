@@ -27,7 +27,8 @@ object gimenez {
 	method totalDeuda(){return deuda}
 	method totalDinero(){return dinero}
 
-}
+}//¿qué mensajes entiende cada uno?
+//gimenez entiende los metodos: dinero, deudar,sueldo,sueldo(con parametro),cobrarSueldo,gastar,totalDeuda,totalDinero
 object baigorria {
 	var totalCobrado=0
 	var cantidadEmpanadasVendidas = 100
