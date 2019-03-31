@@ -39,7 +39,9 @@ object baigorria {
 	}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
-	method cobrarSueldo(){totalCobrado+=self.sueldo()}
+	method cobrarSueldo(){totalCobrado+=self.sueldo()
+		cantidadEmpanadasVendidas=0
+	}
 	method totalCobrado(){return totalCobrado}
 }
 
@@ -49,7 +51,7 @@ object galvan {
 	method pagarA( empleado ) { dinero -= empleado.sueldo()
 		empleado.pagarCobrar() //se rompe porque no estan los metodos unidos por polimorfismo. en este caso ninguno tiene el metodo cobrarSueldo()
 	}
-}
+}//baigorria tiene de metodos:venderEmpanada,sueldo,cobrarSueldo,totalCobrado
 object deudas{
 	method calcular(persona,deuda){
 		var dinero=persona.totalDinero()
@@ -66,7 +68,7 @@ object deudas{
 			persona.deudar(deud)
 		}
 	}
-	}
+	}//deudas solo contiene el metodo calcular
 object gasto{
 	method calcular(persona,cuanto){
 		var acum
@@ -89,4 +91,4 @@ object gasto{
 		persona.deudar(deuda)
 	}
 	}
-}
+}//gasto solo contiene un solo metodo. calcular
