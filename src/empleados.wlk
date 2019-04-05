@@ -34,8 +34,8 @@ object baigorria {
 	var cantidadEmpanadasVendidas = 100
 	var montoPorEmpanada = 15
 	
-	method venderEmpanada() {
-		cantidadEmpanadasVendidas += 1
+	method venderEmpanada(cant) {//ingrese las empanadas vendidas por dia
+		cantidadEmpanadasVendidas += cant
 	}
  	
 	method sueldo() = cantidadEmpanadasVendidas * montoPorEmpanada
